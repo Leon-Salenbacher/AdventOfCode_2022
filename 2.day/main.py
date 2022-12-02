@@ -20,14 +20,56 @@ def get_points(you, opponent):
             points += 6
     return points
 
+def get_your_move(opponent, expected_outcom):
+    move = ""
+    if(excepted_outcome == "X"):
+        if(opponent == "A"):
+            move = "Z"
+        elif(opponent == "B"):
+            move = "X"
+        elif(opponent == "C"):
+            move = "Y"
+
+    elif(excepted_outcome == "Y"):
+        if(opponent == "A"):
+            move = "X"
+        elif(opponent == "B"):
+            move = "Y"
+        elif(opponent == "C"):
+            move = "Z"
+    elif(excepted_outcome == "Z"):
+        if(opponent == "A"):
+            move = "Y"
+        elif(opponent == "B"):
+            move = "Z"
+        elif(opponent == "C"):
+            move = "X"
+    return move
+
 if '__main__' == __name__:
     f = open("./2.day/input.txt", "r")
     total_points = 0
     for l in f:
-        [opponent, you] = l.split(" ") 
-        if(you[-1] == "\n"):
-            you = you[:-1]
+        [opponent, excepted_outcome] = l.split(" ") 
+        if(excepted_outcome[-1] == "\n"):
+            excepted_outcome = excepted_outcome[:-1]
 
+        you = get_your_move(opponent, excepted_outcome)
         total_points += get_points(you, opponent)
         
     print(total_points)
+
+
+
+"""
+You:
+Rock     -> X -> 1
+Paper    -> Y -> 2
+Scissors -> Z -> 3
+
+Opponent
+Rock     -> A 
+Paper    -> B
+Scissors -> C
+
+"""
