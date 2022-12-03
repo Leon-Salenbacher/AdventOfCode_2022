@@ -30,7 +30,8 @@ def getPrio(listOfItems):
 
     return total_prio
 
-if '__main__' == __name__:
+
+def part1():
     f = open("./3.day/input.txt", "r")
     list_ofDobleItems = []
 
@@ -39,3 +40,8 @@ if '__main__' == __name__:
 
     total_prio = getPrio(list_ofDobleItems)
     print(total_prio)
+
+
+
+if '__main__' == __name__:
+    part1()
