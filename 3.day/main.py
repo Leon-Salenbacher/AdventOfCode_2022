@@ -9,7 +9,6 @@ def get_item_inBoth(rucksack):
             if(e == i):
                 return i
 
-    
 def getPrio(listOfItems):
     listOfCharacter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
     total_prio = 0
@@ -26,8 +25,6 @@ def getPrio(listOfItems):
                 total_prio += pointStarter
                 break
             pointStarter+=1
-            
-
     return total_prio
 
 def find_group_attachement(first, second, third):
@@ -36,10 +33,6 @@ def find_group_attachement(first, second, third):
             for a in third:
                 if(i == e and e == a):
                     return i
-
-
-
-
 
 def part1():
     f = open("./3.day/input.txt", "r")
